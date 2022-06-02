@@ -159,7 +159,7 @@
 
 &lradc {
 	vref-supply = <&reg_vcc3v0>;
-	status = "okay";
+	status = "disabled";
 
 	button-191 {
 		label = "Volume Up";
@@ -213,6 +213,7 @@
 
 &gmac_mdio {
 	phy1: ethernet-phy@2 {
+		compatible = "ethernet-phy-ieee802.3-c22";
 		reg = <2>;
 	};
 };
@@ -221,13 +222,6 @@
 	vmmc-supply = <&reg_vcc3v3>;
 	bus-width = <4>;
 	cd-gpios = <&pio 7 1 GPIO_ACTIVE_LOW>; /* PH1 */
-	status = "okay";
-};
-
-&mmc3 {
-	vmmc-supply = <&reg_vcc3v3>;
-	bus-width = <4>;
-	cd-gpios = <&pio 7 11 GPIO_ACTIVE_LOW>; /* PH11 */
 	status = "okay";
 };
 
